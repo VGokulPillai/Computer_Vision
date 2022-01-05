@@ -1,0 +1,15 @@
+##Week1 to 3
+#I will explain this is a matlab code 
+A = -925
+B = -750
+Z = 500
+X = 10
+Y = 10
+Ox = 244
+Oy = 180
+mat1 = [[A 0 Ox];[0 B Oy];[0 0 1]]
+mat2 = [[1 0 0 0];[0 1 0 0];[0 0 1 0]]
+mat3 = [X; Y; Z; 1]
+result = mat2*mat3
+result1 = result * mat3
+result2 = result1/Z

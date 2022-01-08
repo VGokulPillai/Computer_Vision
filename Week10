@@ -1,0 +1,10 @@
+% Bayes Inference
+p_o1 = 0.75; % p(obj1)
+p_o2 = 0.25; % p(obj2)
+p_i_o1 = 0.1; % p(I|obj1)
+p_i_o2 = 0.2; % p(I|obj2)
+p_i = p_i_o1 * p_o1 + p_i_o2 * p_o2; % p(I) = p(I|obj1)p(obj1)+ p(I|obj2)p(obj2);
+p_o_i1 = p_i_o1 * p_o1 / p_i; %Bayes formula for obj1
+p_o_i2 = p_i_o2 * p_o2 / p_i; %Bayes formula for obj2
+disp(p_o_i1) % p(obj1|I)
+disp(p_o_i2) % p(obj2|I)

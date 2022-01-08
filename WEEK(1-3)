@@ -1,4 +1,6 @@
 ##Week1 to 3
+
+
 #I will explain this is a matlab code 
 A = -925
 B = -750
@@ -13,3 +15,43 @@ mat3 = [X; Y; Z; 1]
 result = mat2*mat3
 result1 = result * mat3
 result2 = result1/Z
+
+
+##CONVOL
+
+Ia = [0.1 0.5 1]
+la= [1, 0.5, 0.1]
+Ialap=conv2(Ia,la,'same');
+Ialap
+
+
+##1-D
+I1 = [−1 1]
+I2 = [−1 2 −1]
+
+
+
+%%week 6
+I = imread('/Users/vgokulpillai/Documents/MATLAB/cameraman.tif');
+I2= imread('/Users/vgokulpillai/Documents/MATLAB/indoor.jpg');
+I2 = im2gray(I2)
+I = im2gray(I);
+harrisFeatures = detectHarrisFeatures(I);
+surfFeatures = detectSURFFeatures(I);
+harrisFeatures = detectHarrisFeatures(I2);
+surfFeatures = detectSURFFeatures(I2);
+[features1, valid_points1] = extractFeatures(I,harrisFeatures);
+[features2, valid_points2] = extractFeatures(I,surfFeatures);
+[features1, valid_points1] = extractFeatures(I2,harrisFeatures);
+[features2, valid_points2] = extractFeatures(I2,surfFeatures);
+subplot(2,2,1)
+imshow(I); hold on
+plot(valid_points1);
+subplot(2,2,2)
+imshow(I); hold on
+subplot(2,2,3)
+imshow(I2); hold on
+plot(valid_points1);
+subplot(2,2,4)
+imshow(I2); hold on
+plot(valid_points2.selectStrongest(100),'showOrientation',true);
